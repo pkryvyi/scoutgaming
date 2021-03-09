@@ -1,2 +1,3 @@
-# scoutgaming
-REPO for the technical task
+# ScoutGaming
+- Python script
+- Docker
