@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scoutgaming
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: scoutgaming
+  template:
+    metadata:
+      labels:
+        app: scoutgaming
+    spec:
+      containers:
+      - name: scoutgaming
+        image: <your-private-image>
+        imagePullPolicy: Never
+        env:
+        - name: API_KEY
+          value: <your-private-api-key>
+        - name: PAGE_ID
+          value: <your-private-page-id>
+        - name: METRIC_ID
+          value: <your-private-metric-id>
+        resources:
+          requests:
+            memory: 25Mi
+          limits:
+            memory: 32Mi
