@@ -22,17 +22,18 @@ while True:
 
     data = {
         "data": {
-        metric_id: [
-            {
-                "timestamp": timestamp,
-                "value": latency
-            }
-        ]
+            metric_id: [
+                {
+                    "timestamp": timestamp,
+                    "value": latency
+                }
+            ]
         }
     }
     print(data)
 
-    post_request = requests.post(statuspage_url, headers = auth_header, data = json.dumps(data) )
+    post_request = requests.post(
+        statuspage_url, headers=auth_header, data=json.dumps(data))
     print(post_request.status_code)
 
     time.sleep(30)
